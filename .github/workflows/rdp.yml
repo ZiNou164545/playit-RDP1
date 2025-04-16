@@ -3,7 +3,7 @@ name: Playit RDP Tunnel
 on:
    workflow_dispatch:
 
- jobs:
+jobs:
    setup-rdp-tunnel:
      runs-on: windows-latest
 
@@ -12,7 +12,8 @@ on:
        uses: actions/chechout@v2
        
      - name: Download and Install Playit
-      run: |
+     
+     run: |
         Invoke-WebRequest -Uri "https://github.com/playit-cloud/playit-agent/releases/download/v0.15.26/playit-windows-x86_64-signed.exe" -OutFile "$env:USERPROFILE\playit.exe"
         Start-Sleep -Seconds 5  # Give some time for the download to complete
 
